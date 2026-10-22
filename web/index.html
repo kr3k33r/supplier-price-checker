@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Сверка — порядок в прайс-листах</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="workspace.js" defer></script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="brand" href="/" aria-label="Сверка, главная"
+          ><span class="logo">с.</span>сверка</a
+        >
+        <div class="side-label">РАБОЧЕЕ ПРОСТРАНСТВО</div>
+        <div class="nav-item active">▦ <span>Прайс-листы</span><span class="tiny">01</span></div>
+        <div class="side-note">
+          <span class="status-dot"></span> Обработка на вашем компьютере
+          <p>
+            Файлы не уходят во внешние сервисы. Загруженные данные не записываются на диск сервером.
+          </p>
+        </div>
+        <div class="side-bottom">
+          СВЕРКА ПОСТАВЩИКОВ<br /><strong>Настраиваемая обработка CSV</strong>
+        </div>
+      </aside>
+      <main>
+        <header class="topbar">
+          <span>Инструменты / <strong>Сверка поставщиков</strong></span
+          ><span class="workspace-badge">Рабочее пространство</span>
+        </header>
+        <div class="content">
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow">МЕНЬШЕ РУТИНЫ · БОЛЬШЕ ЯСНОСТИ</div>
+              <h1>Разные таблицы.<br />Единый порядок.</h1>
+              <p class="lead">
+                Выберите столбцы, задайте правила и соберите файлы<br class="desktop" />
+                в одну таблицу или сравните прайсы поставщиков.
+              </p>
+            </div>
+            <div class="heading-art" aria-hidden="true">
+              <div>Поставщик А <b>↘</b></div>
+              <div>
+                Поставщик Б <b>→</b><span class="art-result">Единый<br />каталог ✓</span>
+              </div>
+              <div>Поставщик В <b>↗</b></div>
+            </div>
+          </div>
+          <section class="upload-card" aria-labelledby="upload-title">
+            <div class="section-title">
+              <div>
+                <span class="step">01</span>
+                <h2 id="upload-title">Добавьте исходные файлы</h2>
+              </div>
+              <button id="sample" class="button secondary">Загрузить пример ↗</button>
+            </div>
+            <label class="dropzone" id="dropzone"
+              ><input id="files" type="file" accept=".csv,text/csv" multiple /><span
+                class="upload-icon"
+                >↑</span
+              ><strong>Перетащите CSV или выберите файлы</strong
+              ><span>До 5 файлов · UTF-8 / Windows-1251 · до 20 000 записей суммарно</span></label
+            >
+            <div id="file-list" class="file-list"></div>
+            <div class="upload-footer">
+              <span
+                >После загрузки настройте соответствие колонок.<br />Исходные файлы останутся без
+                изменений.</span
+              >
+            </div>
+            <p id="error" role="alert" class="error" hidden></p>
+          </section>
+          <section class="config-card" aria-labelledby="config-title">
+            <div class="section-title">
+              <div>
+                <span class="step">02</span>
+                <h2 id="config-title">Настройте результат</h2>
+              </div>
+              <div class="profile-actions">
+                <button id="save-profile" class="button secondary">Сохранить правила ↓</button
+                ><label class="button secondary profile-import"
+                  >Открыть правила<input
+                    id="load-profile"
+                    type="file"
+                    accept=".json,application/json"
+                /></label>
+              </div>
+            </div>
+            <div class="mode-row">
+              <label
+                >Задача<select id="mode">
+                  <option value="prices">Сравнить прайсы поставщиков</option>
+                  <option value="merge">Собрать таблицы с любыми столбцами</option>
+                </select></label
+              >
+              <p id="mode-hint">
+                Артикул связывает предложения поставщиков. Названия исходных колонок могут быть
+                любыми.
+              </p>
+            </div>
+            <div id="custom-schema" hidden>
+              <label
+                >Столбцы результата через запятую<input
+                  id="field-names"
+                  value="Код, Название, Сумма, Город"
+                  maxlength="1000" /></label
+              ><button id="apply-fields" class="button secondary">Применить столбцы</button>
+              <div id="field-types" class="field-types"></div>
+              <label class="dedup-option"
+                ><input id="deduplicate" type="checkbox" />Убирать полные совпадения строк после
+                сопоставления</label
+              >
+            </div>
+            <div id="mapping-list" class="mapping-list">
+              <p class="mapping-empty">
+                Загрузите файлы, чтобы увидеть их колонки и первые строки.
+              </p>
+            </div>
+            <div class="config-footer">
+              <button id="analyze" class="button primary" disabled>
+                Обработать данные <span>→</span>
+              </button>
+            </div>
+          </section>
+          <section id="results" hidden>
+            <div class="results-heading">
+              <div>
+                <div class="eyebrow">03 / РЕЗУЛЬТАТ ОБРАБОТКИ</div>
+                <h2>Теперь всё на своих местах.</h2>
+              </div>
+              <span id="balance" class="balance"></span>
+            </div>
+            <div id="metrics" class="metrics"></div>
+            <div class="table-card">
+              <div class="table-toolbar">
+                <div class="tabs" role="tablist" aria-label="Результат">
+                  <button class="tab active" role="tab" aria-selected="true" data-tab="products">
+                    Каталог</button
+                  ><button class="tab" role="tab" aria-selected="false" data-tab="issues">
+                    Требуют внимания <span id="issue-count"></span></button
+                  ><button class="tab" role="tab" aria-selected="false" data-tab="rows">
+                    Все записи
+                  </button>
+                </div>
+                <input
+                  id="search"
+                  type="search"
+                  placeholder="Поиск в результате…"
+                  aria-label="Поиск в результате"
+                />
+              </div>
+              <div class="table-scroll">
+                <table>
+                  <thead id="thead"></thead>
+                  <tbody id="tbody"></tbody>
+                </table>
+              </div>
+              <div class="table-footer">
+                <span id="row-count"></span
+                ><button id="download" class="button secondary">Скачать CSV ↓</button>
+              </div>
+            </div>
+            <p id="method" class="method"></p>
+          </section>
+          <section class="explain">
+            <div>
+              <span>01 / ПРИВЕСТИ К ЕДИНОМУ ВИДУ</span>
+              <h3>Артикул остаётся артикулом</h3>
+              <p>
+                Ведущие нули сохраняются. Точные дубли внутри источника отделяются от противоречащих
+                записей.
+              </p>
+            </div>
+            <div>
+              <span>02 / ПРОВЕРИТЬ, А НЕ УГАДАТЬ</span>
+              <h3>Каждая строка учтена</h3>
+              <p>
+                Ошибки, дубли и конфликты попадают в отдельный отчёт с именем файла и номером
+                строки.
+              </p>
+            </div>
+            <div>
+              <span>03 / ПЕРЕДАТЬ ДАЛЬШЕ</span>
+              <h3>Результат можно забрать</h3>
+              <p>Каталог, исходные нормализованные записи и список проблем выгружаются отдельно.</p>
+            </div>
+          </section>
+          <footer>
+            Сверка / работа с таблицами <span>CSV сейчас · XLSX — отдельное расширение</span>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

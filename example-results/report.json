@@ -1,0 +1,417 @@
+{
+  "mode": "prices",
+  "summary": {
+    "input_rows": 36,
+    "valid_rows": 30,
+    "excluded_rows": 3,
+    "duplicates": 1,
+    "conflict_rows": 2,
+    "products": 10,
+    "balance_ok": true
+  },
+  "rows": [
+    {
+      "source": "01-sever.csv",
+      "line": 2,
+      "sku": "00101",
+      "name": "Фильтр входной",
+      "price": "1250.00",
+      "stock": 12
+    },
+    {
+      "source": "01-sever.csv",
+      "line": 3,
+      "sku": "00102",
+      "name": "Клапан подачи",
+      "price": "2840",
+      "stock": 5
+    },
+    {
+      "source": "01-sever.csv",
+      "line": 4,
+      "sku": "00103",
+      "name": "Ремень приводной",
+      "price": "980",
+      "stock": 0
+    },
+    {
+      "source": "01-sever.csv",
+      "line": 5,
+      "sku": "00104",
+      "name": "Насос сливной",
+      "price": "3250",
+      "stock": 8
+    },
+    {
+      "source": "01-sever.csv",
+      "line": 6,
+      "sku": "00105",
+      "name": "Подшипник 6204",
+      "price": "460",
+      "stock": 25
+    },
+    {
+      "source": "01-sever.csv",
+      "line": 7,
+      "sku": "00106",
+      "name": "Манжета люка",
+      "price": "4190",
+      "stock": 3
+    },
+    {
+      "source": "01-sever.csv",
+      "line": 8,
+      "sku": "00107",
+      "name": "Термодатчик",
+      "price": "760",
+      "stock": 10
+    },
+    {
+      "source": "01-sever.csv",
+      "line": 9,
+      "sku": "00108",
+      "name": "Шланг заливной",
+      "price": "540",
+      "stock": 18
+    },
+    {
+      "source": "01-sever.csv",
+      "line": 10,
+      "sku": "00109",
+      "name": "Щётки двигателя",
+      "price": "890",
+      "stock": 7
+    },
+    {
+      "source": "01-sever.csv",
+      "line": 11,
+      "sku": "00110",
+      "name": "Ручка дверцы",
+      "price": "630",
+      "stock": 11
+    },
+    {
+      "source": "02-vector.csv",
+      "line": 2,
+      "sku": "00101",
+      "name": "Фильтр входной",
+      "price": "1190",
+      "stock": 8
+    },
+    {
+      "source": "02-vector.csv",
+      "line": 3,
+      "sku": "00102",
+      "name": "Клапан подачи",
+      "price": "2760",
+      "stock": 0
+    },
+    {
+      "source": "02-vector.csv",
+      "line": 4,
+      "sku": "00103",
+      "name": "Ремень приводной",
+      "price": "1020",
+      "stock": 15
+    },
+    {
+      "source": "02-vector.csv",
+      "line": 5,
+      "sku": "00104",
+      "name": "Насос сливной",
+      "price": "3190",
+      "stock": 4
+    },
+    {
+      "source": "02-vector.csv",
+      "line": 6,
+      "sku": "00105",
+      "name": "Подшипник 6204",
+      "price": "490",
+      "stock": 40
+    },
+    {
+      "source": "02-vector.csv",
+      "line": 7,
+      "sku": "00106",
+      "name": "Манжета люка",
+      "price": "3990",
+      "stock": 6
+    },
+    {
+      "source": "02-vector.csv",
+      "line": 8,
+      "sku": "00107",
+      "name": "Датчик температуры",
+      "price": "740",
+      "stock": 9
+    },
+    {
+      "source": "02-vector.csv",
+      "line": 9,
+      "sku": "00108",
+      "name": "Шланг заливной",
+      "price": "510",
+      "stock": 20
+    },
+    {
+      "source": "02-vector.csv",
+      "line": 10,
+      "sku": "00109",
+      "name": "Щётки двигателя",
+      "price": "950",
+      "stock": 4
+    },
+    {
+      "source": "02-vector.csv",
+      "line": 11,
+      "sku": "00110",
+      "name": "Ручка дверцы",
+      "price": "610",
+      "stock": 0
+    },
+    {
+      "source": "03-orbita.csv",
+      "line": 2,
+      "sku": "00101",
+      "name": "Фильтр входной",
+      "price": "1280",
+      "stock": 20
+    },
+    {
+      "source": "03-orbita.csv",
+      "line": 3,
+      "sku": "00102",
+      "name": "Клапан подачи",
+      "price": "2790",
+      "stock": 3
+    },
+    {
+      "source": "03-orbita.csv",
+      "line": 4,
+      "sku": "00103",
+      "name": "Ремень приводной",
+      "price": "940",
+      "stock": 0
+    },
+    {
+      "source": "03-orbita.csv",
+      "line": 5,
+      "sku": "00104",
+      "name": "Насос сливной",
+      "price": "3390",
+      "stock": 2
+    },
+    {
+      "source": "03-orbita.csv",
+      "line": 6,
+      "sku": "00105",
+      "name": "Подшипник 6204",
+      "price": "440",
+      "stock": 0
+    },
+    {
+      "source": "03-orbita.csv",
+      "line": 7,
+      "sku": "00106",
+      "name": "Манжета люка",
+      "price": "4250",
+      "stock": 5
+    },
+    {
+      "source": "03-orbita.csv",
+      "line": 8,
+      "sku": "00107",
+      "name": "Термодатчик",
+      "price": "790",
+      "stock": 11
+    },
+    {
+      "source": "03-orbita.csv",
+      "line": 9,
+      "sku": "00108",
+      "name": "Шланг заливной",
+      "price": "530",
+      "stock": 10
+    },
+    {
+      "source": "03-orbita.csv",
+      "line": 10,
+      "sku": "00109",
+      "name": "Щётки двигателя",
+      "price": "870",
+      "stock": 8
+    },
+    {
+      "source": "03-orbita.csv",
+      "line": 11,
+      "sku": "00110",
+      "name": "Ручка дверцы",
+      "price": "650",
+      "stock": 9
+    }
+  ],
+  "products": [
+    {
+      "sku": "00101",
+      "name": "Фильтр входной",
+      "sources": 3,
+      "min_price": "1190",
+      "max_price": "1280",
+      "spread": "90",
+      "best_source": "02-vector.csv",
+      "available": true,
+      "review": false
+    },
+    {
+      "sku": "00102",
+      "name": "Клапан подачи",
+      "sources": 3,
+      "min_price": "2790",
+      "max_price": "2840",
+      "spread": "50",
+      "best_source": "03-orbita.csv",
+      "available": true,
+      "review": false
+    },
+    {
+      "sku": "00103",
+      "name": "Ремень приводной",
+      "sources": 3,
+      "min_price": "1020",
+      "max_price": "1020",
+      "spread": "0",
+      "best_source": "02-vector.csv",
+      "available": true,
+      "review": false
+    },
+    {
+      "sku": "00104",
+      "name": "Насос сливной",
+      "sources": 3,
+      "min_price": "3190",
+      "max_price": "3390",
+      "spread": "200",
+      "best_source": "02-vector.csv",
+      "available": true,
+      "review": false
+    },
+    {
+      "sku": "00105",
+      "name": "Подшипник 6204",
+      "sources": 3,
+      "min_price": "460",
+      "max_price": "490",
+      "spread": "30",
+      "best_source": "01-sever.csv",
+      "available": true,
+      "review": false
+    },
+    {
+      "sku": "00106",
+      "name": "Манжета люка",
+      "sources": 3,
+      "min_price": "3990",
+      "max_price": "4250",
+      "spread": "260",
+      "best_source": "02-vector.csv",
+      "available": true,
+      "review": false
+    },
+    {
+      "sku": "00107",
+      "name": "Термодатчик",
+      "sources": 3,
+      "min_price": "740",
+      "max_price": "790",
+      "spread": "50",
+      "best_source": "02-vector.csv",
+      "available": true,
+      "review": true
+    },
+    {
+      "sku": "00108",
+      "name": "Шланг заливной",
+      "sources": 3,
+      "min_price": "510",
+      "max_price": "540",
+      "spread": "30",
+      "best_source": "02-vector.csv",
+      "available": true,
+      "review": false
+    },
+    {
+      "sku": "00109",
+      "name": "Щётки двигателя",
+      "sources": 3,
+      "min_price": "870",
+      "max_price": "950",
+      "spread": "80",
+      "best_source": "03-orbita.csv",
+      "available": true,
+      "review": false
+    },
+    {
+      "sku": "00110",
+      "name": "Ручка дверцы",
+      "sources": 3,
+      "min_price": "630",
+      "max_price": "650",
+      "spread": "20",
+      "best_source": "01-sever.csv",
+      "available": true,
+      "review": false
+    }
+  ],
+  "issues": [
+    {
+      "source": "01-sever.csv",
+      "line": 12,
+      "sku": "00110",
+      "type": "Дубль",
+      "reason": "Точное повторение строки 11"
+    },
+    {
+      "source": "01-sever.csv",
+      "line": 13,
+      "sku": "",
+      "type": "Ошибка",
+      "reason": "Пустой или слишком длинный артикул"
+    },
+    {
+      "source": "01-sever.csv",
+      "line": 14,
+      "sku": "00112",
+      "type": "Ошибка",
+      "reason": "Ожидается число"
+    },
+    {
+      "source": "03-orbita.csv",
+      "line": 12,
+      "sku": "00113",
+      "type": "Ошибка",
+      "reason": "Остаток не может быть отрицательным"
+    },
+    {
+      "source": "02-vector.csv",
+      "line": 12,
+      "sku": "00111",
+      "type": "Конфликт",
+      "reason": "Один артикул в источнике имеет разные данные"
+    },
+    {
+      "source": "02-vector.csv",
+      "line": 13,
+      "sku": "00111",
+      "type": "Конфликт",
+      "reason": "Один артикул в источнике имеет разные данные"
+    },
+    {
+      "source": "01-sever.csv / 02-vector.csv / 03-orbita.csv",
+      "line": "",
+      "sku": "00107",
+      "type": "Проверить",
+      "reason": "Названия одного артикула различаются"
+    }
+  ]
+}

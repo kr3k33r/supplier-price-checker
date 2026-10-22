@@ -1,0 +1,11 @@
+﻿sku;name;sources;min_price;max_price;spread;best_source;available;review
+00101;Фильтр входной;3;1190;1280;90;02-vector.csv;True;False
+00102;Клапан подачи;3;2790;2840;50;03-orbita.csv;True;False
+00103;Ремень приводной;3;1020;1020;0;02-vector.csv;True;False
+00104;Насос сливной;3;3190;3390;200;02-vector.csv;True;False
+00105;Подшипник 6204;3;460;490;30;01-sever.csv;True;False
+00106;Манжета люка;3;3990;4250;260;02-vector.csv;True;False
+00107;Термодатчик;3;740;790;50;02-vector.csv;True;True
+00108;Шланг заливной;3;510;540;30;02-vector.csv;True;False
+00109;Щётки двигателя;3;870;950;80;03-orbita.csv;True;False
+00110;Ручка дверцы;3;630;650;20;01-sever.csv;True;False
