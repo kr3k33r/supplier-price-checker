@@ -29,6 +29,7 @@ let files = [];
 let result = null;
 let activeTab = "products";
 let inspectionVersion = 0;
+let resultVersion = 0;
 let busy = false;
 
 async function api(path, payload) {
@@ -53,6 +54,7 @@ function showError(message) {
 }
 
 function invalidate() {
+  resultVersion += 1;
   result = null;
   $("results").hidden = true;
   showError("");
@@ -116,12 +118,12 @@ function updateFiles() {
 
 async function inspectFiles(preserve = true) {
   const version = ++inspectionVersion;
+  invalidate();
   if (!files.length) {
     renderMappings();
     setBusy(false);
     return;
   }
-  invalidate();
   setBusy(true);
   try {
     const data = await api("/api/inspect", payload());
@@ -353,8 +355,12 @@ $("sample").onclick = async () => {
 $("analyze").onclick = async () => {
   setBusy(true);
   invalidate();
+  const version = resultVersion;
+  const inspection = inspectionVersion;
   try {
-    result = await api("/api/analyze", payload());
+    const data = await api("/api/analyze", payload());
+    if (version !== resultVersion) return;
+    result = data;
     const summary = result.summary;
     const cards = [
       [summary.input_rows, "Исходных записей", "Во всех загруженных файлах"],
@@ -389,10 +395,11 @@ $("analyze").onclick = async () => {
     render();
     $("results").scrollIntoView({ behavior: "smooth", block: "start" });
   } catch (error) {
+    if (version !== resultVersion) return;
     invalidate();
     showError(error.message);
   } finally {
-    setBusy(false);
+    if (inspection === inspectionVersion) setBusy(false);
   }
 };
 
